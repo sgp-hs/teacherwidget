@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TeacherWidget - 교사의 하루를 조금 더 편리하게 만드는 Windows 바탕화면 위젯">
+  <title>TeacherWidget</title>
+  <style>
+    :root{
+      --bg:#f6f7f4;
+      --panel:#ffffff;
+      --text:#20242a;
+      --muted:#69717c;
+      --line:#dfe3de;
+      --accent:#536b62;
+      --accent-soft:#e8efeb;
+      --shadow:0 10px 30px rgba(30,40,35,.07);
+      --radius:20px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:"Segoe UI","Noto Sans KR",Apple SD Gothic Neo,sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at 15% 5%, #eaf3f0 0, transparent 28rem),
+        radial-gradient(circle at 90% 25%, #eef1f6 0, transparent 30rem),
+        var(--bg);
+      line-height:1.65;
+    }
+    a{color:var(--accent)}
+    .wrap{width:min(1080px, calc(100% - 40px)); margin:0 auto}
+    header{
+      padding:72px 0 44px;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 12px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      background:rgba(255,255,255,.75);
+      color:var(--accent);
+      font-size:14px;
+      font-weight:700;
+    }
+    h1{
+      margin:18px 0 10px;
+      font-size:clamp(38px,7vw,68px);
+      line-height:1.08;
+      letter-spacing:-.035em;
+    }
+    .lead{
+      max-width:760px;
+      margin:0;
+      color:var(--muted);
+      font-size:clamp(18px,2.3vw,23px);
+    }
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{
+      display:inline-block;
+      padding:11px 17px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:var(--panel);
+      color:var(--text);
+      text-decoration:none;
+      font-weight:700;
+    }
+    .btn.primary{
+      border-color:var(--accent);
+      background:var(--accent);
+      color:#fff;
+    }
+    section{padding:24px 0 44px}
+    h2{
+      margin:0 0 18px;
+      font-size:28px;
+      letter-spacing:-.02em;
+    }
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:16px;
+    }
+    .card{
+      background:rgba(255,255,255,.88);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+    .card h3{margin:0 0 7px;font-size:18px}
+    .card p{margin:0;color:var(--muted)}
+    .icon{
+      width:38px;height:38px;
+      display:grid;place-items:center;
+      margin-bottom:14px;
+      border-radius:11px;
+      background:var(--accent-soft);
+      color:var(--accent);
+      font-size:20px;
+    }
+    .info{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+    .notice{
+      padding:22px;
+      border-left:4px solid var(--accent);
+      border-radius:14px;
+      background:#fff;
+      border-top:1px solid var(--line);
+      border-right:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    footer{
+      margin-top:34px;
+      padding:28px 0 48px;
+      color:var(--muted);
+      border-top:1px solid var(--line);
+      font-size:14px;
+    }
+    @media (max-width:780px){
+      header{padding-top:48px}
+      .grid{grid-template-columns:1fr}
+      .info{grid-template-columns:1fr}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Windows Desktop Widget</div>
+      <h1>TeacherWidget</h1>
+      <p class="lead">
+        교사가 자주 확인하는 시간표, 달력, 할 일, 바로가기, 파일, 메모와 급식 정보를
+        바탕화면에서 빠르게 확인하고 관리할 수 있도록 만든 Windows용 데스크톱 위젯입니다.
+      </p>
+      <div class="actions">
+        <a class="btn primary" href="#features">주요 기능 보기</a>
+        <a class="btn" href="privacy.html">개인정보처리방침</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section id="features">
+      <h2>주요 기능</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="icon">▦</div>
+          <h3>시간표</h3>
+          <p>교사 시간표를 바탕화면에서 바로 확인할 수 있습니다.</p>
+        </article>
+        <article class="card">
+          <div class="icon">□</div>
+          <h3>달력·일정</h3>
+          <p>월간 달력에서 일정 확인, 등록, 수정과 관리가 가능합니다.</p>
+        </article>
+        <article class="card">
+          <div class="icon">✓</div>
+          <h3>해야 할 일</h3>
+          <p>중요 표시와 마감일을 포함한 할 일을 관리할 수 있습니다.</p>
+        </article>
+        <article class="card">
+          <div class="icon">↗</div>
+          <h3>바로가기</h3>
+          <p>자주 사용하는 웹사이트를 원하는 브라우저로 빠르게 열 수 있습니다.</p>
+        </article>
+        <article class="card">
+          <div class="icon">▭</div>
+          <h3>파일·폴더</h3>
+          <p>자주 사용하는 파일과 폴더를 위젯에서 바로 열 수 있습니다.</p>
+        </article>
+        <article class="card">
+          <div class="icon">✎</div>
+          <h3>메모·급식</h3>
+          <p>간단한 로컬 메모와 학교 급식 정보를 한 화면에서 확인할 수 있습니다.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Google 계정 연동</h2>
+      <div class="info">
+        <div class="card">
+          <h3>Google Calendar</h3>
+          <p>
+            사용자가 Google 계정을 연결한 경우 TeacherWidget의 일반 일정과
+            Google Calendar 일정을 동기화할 수 있습니다.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Google Tasks</h3>
+          <p>
+            TeacherWidget의 해야 할 일을 Google Tasks와 동기화하여
+            등록, 수정, 완료 및 삭제 상태를 함께 관리할 수 있습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>데이터 처리 원칙</h2>
+      <div class="notice">
+        TeacherWidget은 별도의 TeacherWidget 서버를 운영하지 않습니다.
+        카드 배치, 테마, 메모, 프로그램 설정 및 Google 인증에 필요한 정보는
+        사용자의 PC에 로컬로 저장됩니다. Google 연동은 사용자가 직접 선택한 경우에만 사용되며,
+        Google 사용자 데이터는 광고, 마케팅 또는 판매 목적으로 사용하지 않습니다.
+      </div>
+    </section>
+
+    <section>
+      <h2>개인정보 보호</h2>
+      <p>
+        TeacherWidget이 Google 사용자 데이터를 어떻게 접근하고 사용하는지에 대한 자세한 내용은
+        <a href="privacy.html"><strong>개인정보처리방침</strong></a>에서 확인할 수 있습니다.
+      </p>
+      <p>
+        문의 이메일: <strong>YOUR_EMAIL@example.com</strong>
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      © 2026 TeacherWidget · Windows desktop widget
+    </div>
+  </footer>
+</body>
+</html>
